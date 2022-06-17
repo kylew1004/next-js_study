@@ -30,7 +30,7 @@ npx create-next-app@latest --typescript
 
 # Link 태그
 
-- <a href>를 쓰면 페이지가 새로고침이 되는데 side render를 하는 의미가 없어지므로 Link태그를 활용합니다.
+- `<a href>`를 쓰면 페이지가 새로고침이 되는데 side render를 하는 의미가 없어지므로 Link태그를 활용합니다.
 - 페이지 간 클라이언트 측 경로 전환을 활성화하고 single-page app 경험을 제공하려면 Link컴포넌트가 필요합니다.
 
 ```
@@ -81,30 +81,10 @@ export default function NavBar() {
 }
 ```
 
-## CSS modules (Styles JSX가 갠적으로 더 편함)
-
-- css modules는 우리가 평범한 css를 사용할 수 있도록 도와준다.
-- 클래스를 추가할 때 클래스이름을 텍스트로서 추가하지 않는다.
-- 자바스크립트에서의 프로퍼티 형식으로 추가한다.
-- 이러한 접근방식의 장점은 어떤 '충돌'도 일어나지 않는다. (다른 컴포넌트에서 같은 이름의 클래스이름을 사용할 수 있다.)
-
-```
-// NabBar.module.css 의 코드
-.link {
-  text-decoration: none;
-}
-```
-
-```
-// 개발자도구에서의 코드
-// link 클래스의 이름이 특이하게 되어있다.
-<a class="NavBar_link__m_ckV NavBar_active__tG_1I" href="/">Home</a>
-```
-
 # Styles JSX
 
-- NextJS의 고유한 style추가방법이다.
-- style jsx는 해당 파일에서만 클래스를 불러올 수 있기때문에 다른 파일에 영향을 주지 않는다.
+- NextJS의 고유한 style추가방법입니다.
+- style jsx는 해당 파일에서만 클래스를 불러올 수 있기때문에 다른 파일에 영향을 주지 않습니다.
 
 ```
 import Link from "next/link";
@@ -136,9 +116,29 @@ export default function NavBar() {
 }
 ```
 
+## CSS modules (Styles JSX가 갠적으로 더 편함)
+
+- css modules는 우리가 평범한 css를 사용할 수 있도록 도와줍니다.
+- 클래스를 추가할 때 클래스이름을 텍스트로서 추가하지 않습니다.
+- 자바스크립트에서의 프로퍼티 형식으로 추가합니다.
+- 이러한 접근방식의 장점은 어떤 '충돌'도 일어나지 않습니다. (다른 컴포넌트에서 같은 이름의 클래스이름을 사용할 수 있다.)
+
+```
+// NabBar.module.css 의 코드
+.link {
+  text-decoration: none;
+}
+```
+
+```
+// 개발자도구에서의 코드
+// link 클래스의 이름이 특이하게 되어있다.
+<a class="NavBar_link__m_ckV NavBar_active__tG_1I" href="/">Home</a>
+```
+
 # Global style
 
-- \_app.js라는 파일을 만든다. (반드시 이 이름이어야 한다.! 왜냐면 NextJS는 다른page가 렌더링되기전에 app파일을 먼저 보기 때문이다.)
+- \_app.js라는 파일을 만듭니다. (반드시 이 이름이어야 한다.! 왜냐면 NextJS는 다른page가 렌더링되기전에 app파일을 먼저 보기 때문입니다.)
 - next는 app()함수에 2가지 prop을 가져옵니다. (Componets, pageProps => 컴포넌트, 불러올 페이지)
 - next는 global.css를 import 할 수 없습니다.
 - global style을 여기서 만들 수 있습니다.
