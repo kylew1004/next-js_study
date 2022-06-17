@@ -4,7 +4,7 @@ import "../styles/globals.css";
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <NavBar />
+      <NavBar></NavBar>
       <Component {...pageProps} />
     </>
   );
